@@ -3,6 +3,7 @@ import subprocess
 import getpass
 import configparser
 from github import Github
+import json
 
 
 # Makes the ANSI colors work on Windows (known Python bug)
@@ -37,39 +38,32 @@ repoName = ""
 username = config.get("DEFAULT", "username")
 password = config.get("DEFAULT", "password")
 
-
-# proccess for blank projects
-def Blank():
-    os.mkdir(projectName)
-    os.chdir(projectName)
-    subprocess.run(f"echo {repoName} >> README.md", shell=True)
-
-
-# process for react projects
-def React():
-    subprocess.run(f"npx create-react-app {projectName}", shell=True)
-    os.chdir(projectName)
-
-
-# process for react typescript projects
-def ReactTS():
-    subprocess.run(
-        f"npx create-react-app {projectName} --typescript", shell=True)
-    os.chdir(projectName)
-
-
 # project types dict with values for correct process function
-types = {
-    'blank': Blank,
-    'react': React,
-    'react-ts': ReactTS
-}
+types = []
+for file in os.listdir('languages'):
+    types.append(file.replace('.json', ''))
 
+jsonVars = {
+    '{projectName}': projectName,
+    '{repoName}': repoName
+}
 
 # runs the proccess to run based on the type of project
 def RunProjectProcess(projectType):
-    types[projectType]()
-
+    print(type(projectType), projectType)
+    try:
+        with open(f'./languages/{projectType}.json') as file:
+            raw = json.load(file)
+            cmd = raw['cmd']
+            for key, value in jsonVars.items():
+                if cmd.find(key) != -1:
+                    cmd = cmd.replace(key, value)
+            # changes into correct directory and runs the project proccess for the declared project type
+            os.chdir(localPath)
+            subprocess.run(cmd, shell=True)
+    except FileNotFoundError:
+        # This should never happen
+        print(bcolors.FAIL + "An internal error occurred" + bcolors.ENDC)
 
 # gets user input to update GitHub credentials
 def GetCredentials():
@@ -91,7 +85,7 @@ def CreateGitHubRepo():
     GetCredentials()
     try:
         user = Github(username, password).get_user()
-        user.create_repo(repoName)
+        # user.create_repo(repoName)
         return True
     except Exception as e:
         username = ""
@@ -106,8 +100,6 @@ def CreateGitHubRepo():
 while projectType not in types:
     print(bcolors.WARNING + "Invalid project type, please try again." + bcolors.ENDC)
     print("Valid project types: ")
-    for key, value in types.items():
-        print(bcolors.OKBLUE + key + bcolors.ENDC)
     projectType = input("Project type: ")
 
 
@@ -116,9 +108,6 @@ while CreateGitHubRepo() == False:
     print(bcolors.WARNING +
           "Something went wrong when creating the GitHub repo. See above for more details." + bcolors.ENDC)
 
-
-# changes into correct directory and runs the project proccess for the declared project type
-os.chdir(localPath)
 RunProjectProcess(projectType)
 
 
@@ -135,16 +124,21 @@ subprocess.run("git push -u origin master", shell=True)
 # opens project in editor
 if config.get("DEFAULT", "editor") == "vscode":
     subprocess.run("code .", shell=True)
-elif config.get("DEFAULT", "editor" == "atom":
+elif config.get("DEFAULT", "editor" == "atom"):
     subprocess.run("atom .", shell=True)
-elif config.get("DEFAULT", "editor" == "none":
+elif config.get("DEFAULT", "editor" == "none"):
     print("No editor selected.")
-else
-    print(bcolors.WARNING + "Editor unknown. Please consult config.script."
-print(bcolors.OKGREEN + "Project created succesfully!" + bcolors.ENDC)
+else:
+    print(bcolors.WARNING + "Editor unknown. Please consult config.script.")
+
+print(bcolors.OKGREEN + "Project created successfully!" + bcolors.ENDC)
 
 
-
-# starts dev server for react projects
-if projectType == 'react' or projectType == 'react-ts':
-    subprocess.run("npm start", shell=True)
+# Post project creation commands
+os.chdir(localPath + f"\{projectName}")
+try:
+    with open(f'./languages/{projectType}.json') as file:
+        cmd = json.load(file)['post-cmd']
+        subprocess.run(cmd, shell=True)
+except FileNotFoundError:
+    print("An internal error occurred")

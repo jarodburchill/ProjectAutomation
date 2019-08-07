@@ -1,0 +1,4 @@
+{
+    "cmd": "echo # {repoName} >> README.md",
+    "post-cmd": ""
+}

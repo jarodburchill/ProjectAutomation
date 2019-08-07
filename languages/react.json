@@ -1,0 +1,4 @@
+{
+    "cmd": "npx create-react-app {projectName}",
+    "post-cmd": "npm start"
+}
