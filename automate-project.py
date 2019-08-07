@@ -85,7 +85,7 @@ def CreateGitHubRepo():
     GetCredentials()
     try:
         user = Github(username, password).get_user()
-        # user.create_repo(repoName)
+        user.create_repo(repoName)
         return True
     except Exception as e:
         username = ""
@@ -124,9 +124,9 @@ subprocess.run("git push -u origin master", shell=True)
 # opens project in editor
 if config.get("DEFAULT", "editor") == "vscode":
     subprocess.run("code .", shell=True)
-elif config.get("DEFAULT", "editor" == "atom"):
+elif config.get("DEFAULT", "editor") == "atom":
     subprocess.run("atom .", shell=True)
-elif config.get("DEFAULT", "editor" == "none"):
+elif config.get("DEFAULT", "editor") == "none":
     print("No editor selected.")
 else:
     print(bcolors.WARNING + "Editor unknown. Please consult config.script.")
