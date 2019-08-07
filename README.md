@@ -32,7 +32,7 @@ cd ~/ProjectAutomation/mac-linux
 chmod +x new-project
 ```
 ## Configuration:
-All configuration options can be found in the `script.config` file.
+Rename the `script.config.example` to `script.config` and edit it according to your needs
 ### Options and Defaults:
 The `localPath` option takes a file path string to determine where new local repositories will be created.
 ```

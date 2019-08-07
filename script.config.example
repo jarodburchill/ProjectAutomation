@@ -1,0 +1,5 @@
+[DEFAULT]
+localPath = # Your development directory path here
+editor = vscode
+username = 
+password = 
