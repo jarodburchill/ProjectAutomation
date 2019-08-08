@@ -38,16 +38,17 @@ The `localPath` option takes a file path string to determine where new local rep
 ```
 localPath = C:/Projects/
 ```
-Linux users must change local path:
+Linux users must change the local path to:
 ```
 localPath = /home/$USER/Projects/
 ```
-Mac users must change local path:
+Mac users must change the local path to:
 ```
 localPath = /Users/$USER/Projects/
 ```
 
 #### $USER = your machine's username. MUST CHANGE  
+
 -----------------------------
 The `editor` option takes a string to determine what editor new projects will be opened in after creation.
 ```
@@ -58,12 +59,12 @@ Any editor that is installed on your local machine is supported (provided it has
 #### See editors.md for a list of editors.
 
 -----------------------------
-The `username` option is blank by default. If a correct GitHub username is entered into this option, the script will not promt the user to enter a username on each run. 
+The `username` option is blank by default. If a correct GitHub username is entered into this option, the script will not prompt the user to enter a username on each run. 
 ```
 username =
 ```
 -----------------------------
-The `password` option is blank by default. If a correct GitHub password is entered into this option and the username option has also been provided, the script will not promt the user to enter a password on each run. 
+The `password` option is blank by default. If a correct GitHub password is entered into this option and the username option has also been provided, the script will not prompt the user to enter a password on each run. 
 ```
 password =
 ```
