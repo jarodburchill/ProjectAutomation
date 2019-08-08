@@ -47,7 +47,7 @@ Mac users must change the local path to:
 localPath = /Users/$USER/Projects/
 ```
 
-#### $USER = your machine's username. MUST CHANGE  
+#### $USER = your machine's username. YOU MUST CHANGE THIS.
 
 -----------------------------
 The `editor` option takes a string to determine what editor new projects will be opened in after creation.
