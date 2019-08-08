@@ -76,7 +76,7 @@ def GetCredentials():
     global repoName
     global username
     global password
-    repoName = input("Enter new GitHub repository name: ")
+    repoName = input("Enter a name for the new GitHub repository: ")
     if (username == ""):
         username = input("Enter your GitHub username: ")
     if (username == "" or password == ""):
@@ -104,7 +104,7 @@ def CreateGitHubRepo():
 
 # loops until project type is valid
 while projectType not in types:
-    print(bcolors.WARNING + "Invalid project type, please try again." + bcolors.ENDC)
+    print(bcolors.WARNING + "Invalid project type; please try again." + bcolors.ENDC)
     print("Valid project types: ")
     for key, value in types.items():
         print(bcolors.OKBLUE + key + bcolors.ENDC)
@@ -139,7 +139,7 @@ if editor is not "none":
     try:
         subprocess.run(f"{editor} .", shell=True)
     except Exception as e:
-        print(bcolors.FAIL + "No editor found: ERROR: " + bcolors.ENDC + e)
+        print(bcolors.FAIL + "No editor found. ERROR: " + bcolors.ENDC + e)
 else:
     print(bcolors.WARNING + "No editor selected." + bcolors.ENDC)
 print(bcolors.OKGREEN + "Project created succesfully!" + bcolors.ENDC)
