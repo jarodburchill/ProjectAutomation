@@ -22,14 +22,20 @@ def React():
 
 # process for react typescript projects
 def ReactTS():
-    subprocess.run(
-        f"npx create-react-app {script.projectName} --typescript", shell=True)
+    subprocess.run(f"npx create-react-app {script.projectName} --typescript", shell=True)
     os.chdir(script.projectName)
 
+    
+# process for nodejs projects
+def NodeJS():
+    subprocess.run(f"npm init {script.projectName}", shell=True)
+    od.chdir(script.projectName)
 
+    
 # project types dict with values for correct process function
 types = {
     'blank': Blank,
     'react': React,
     'react-ts': ReactTS
+    'node-js': NodeJS
 }
