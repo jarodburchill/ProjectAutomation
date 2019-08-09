@@ -2,10 +2,16 @@ import os
 import subprocess
 import getpass
 import configparser
+import project_types
 from github import Github
 
 
-# Makes the ANSI colors work on Windows (known Python bug)
+# import project-types module
+types = project_types.types
+
+print(types)
+
+# makes the ANSI colors work on Windows (known Python bug)
 subprocess.run("", shell=True)
 
 
@@ -37,34 +43,6 @@ editor = config.get("DEFAULT", "editor")
 repoName = ""
 username = config.get("DEFAULT", "username")
 password = config.get("DEFAULT", "password")
-
-
-# proccess for blank projects
-def Blank():
-    os.mkdir(projectName)
-    os.chdir(projectName)
-    subprocess.run(f"echo {repoName} >> README.md", shell=True)
-
-
-# process for react projects
-def React():
-    subprocess.run(f"npx create-react-app {projectName}", shell=True)
-    os.chdir(projectName)
-
-
-# process for react typescript projects
-def ReactTS():
-    subprocess.run(
-        f"npx create-react-app {projectName} --typescript", shell=True)
-    os.chdir(projectName)
-
-
-# project types dict with values for correct process function
-types = {
-    'blank': Blank,
-    'react': React,
-    'react-ts': ReactTS
-}
 
 
 # runs the proccess to run based on the type of project
