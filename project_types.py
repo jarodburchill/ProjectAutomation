@@ -29,7 +29,7 @@ def ReactTS():
 # process for nodejs projects
 def NodeJS():
     subprocess.run(f"npm init {script.projectName}", shell=True)
-    od.chdir(script.projectName)
+    os.chdir(script.projectName)
 
     
 # project types dict with values for correct process function
