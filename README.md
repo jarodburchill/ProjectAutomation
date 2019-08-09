@@ -50,7 +50,7 @@ Mac users must change the local path:
 ```
 localPath = /Users/$USER/Projects/
 ```
-#### $USER = your machine's username. MUST CHANGE  
+#### $USER = your machine's username. MUST CHANGE!
 -----------------------------
 The `editor` option takes a string to determine what editor new projects will be opened in after creation.
 ```
@@ -59,6 +59,7 @@ editor = <editor>
 Any editor that is installed on your local machine is supported (provided it has a command line command to open). Set to `none` if you don't wish to open the repo in an editor.
 #### See EDITORS.md for a list of editors.
 -----------------------------
+#### For security reasons, the last 2 options are found in `creds.config`.
 The `username` option is blank by default. If a correct GitHub username is entered into this option, the script will not prompt the user to enter a username on each run. 
 ```
 username =
