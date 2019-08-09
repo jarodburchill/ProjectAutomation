@@ -23,8 +23,9 @@ class bcolors:
 
 # config parser set up
 config = configparser.ConfigParser()
-config.read("script.config")
-
+config.read("script.config", "creds.config")
+            
+            
 
 # global project variables
 localPath = config.get("DEFAULT", "localPath")
@@ -35,8 +36,8 @@ editor = config.get("DEFAULT", "editor")
 
 # global GitHub credentials
 repoName = ""
-username = config.get("DEFAULT", "username")
-password = config.get("DEFAULT", "password")
+username = config.get("DEFAULT2", "username")
+password = config.get("DEFAULT2", "password")
 
 
 # proccess for blank projects
