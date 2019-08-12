@@ -38,7 +38,19 @@ def ReactTS():
 # process for nodejs projects
 def Node():
     Blank()
-    subprocess.run(f"npm init", shell=True)
+    subprocess.run("npm init", shell=True)
+
+
+# process for expressjs projects
+def Express():
+    Node()
+    subprocess.run("npm install express --save", shell=True)
+
+
+# process for laravel projects
+def Laravel():
+    subprocess.run(f"laravel new {projectName}", shell=True)
+    os.chdir(projectName)
 
 
 # project types dict with values for correct process function
@@ -46,5 +58,7 @@ types = {
     'blank': Blank,
     'react': React,
     'react-ts': ReactTS,
-    'node': Node
+    'node': Node,
+    'express': Express,
+    'laravel': Laravel
 }
