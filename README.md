@@ -68,12 +68,7 @@ The `password` option is blank by default. If a correct GitHub password is enter
 ```
 password = <password>
 ```
------------------------------
-#### NOTE: WIP; [see issue #29.](https://github.com/jarodburchill/ProjectAutomation/issues/29)
-The `twoFacAuth` option is set to `false` by default. Set to `true` if your account uses 2 factor authentication.
-```
-twoFacAuth = <true/false>
-```  
+
 ## Usage:
 ### Run in Terminal:
 ```
