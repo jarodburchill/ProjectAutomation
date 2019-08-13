@@ -92,7 +92,7 @@ Create-react-app with TypeScript:
 ```
 react-ts
 ```
-Node.js with NPM:
+Node.js project:
 ```
 node
 ```
