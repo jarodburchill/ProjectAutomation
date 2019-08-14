@@ -56,11 +56,18 @@ def CreateGitHubRepo():
     GetCredentials()
     try:
         user = Github(username, password).get_user()
-        user.create_repo(repoName)
+        repo = user.create_repo(repoName)
         return True
     except Exception as e:
         username = ""
         password = ""
+        if repo != None:
+            try:
+                repo.delete()
+            except:
+                print(Fore.RED)
+                print("Could not delete new repository")
+                print(Fore.WHITE)
         print(Fore.RED)
         print(e)
         print(Fore.WHITE)
@@ -137,3 +144,10 @@ try:
 except Exception:
     print(Fore.RED + "There was an error when creating the project. " +
           "See above for more details." + Fore.WHITE)
+    if username != "" and password != "":
+        try:
+            user = Github(username, password)
+            repo = user.get_repo(repoName)
+            repo.delete()
+        except:
+            print(f"{Fore.RED}Could not delete new repository \'{repoName}\'. Please try again or delete it online. {Fore.WHITE}")
