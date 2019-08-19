@@ -3,10 +3,19 @@ Python script for creating new projects in the desired local directory, with a G
   
 Contact us [on Discord.](https://discord.gg/eqWstJu)
 ## Requirements:
+#### Universal
 - Python 3.4+
 - Git
-- npm
-- A text editor (i.e. VS Code, Atom, etc.)
+- (Optional but recommended) A text editor (i.e. VS Code, Atom, etc.)
+In addition:
+#### Node/React
+- NPM
+- (React) create-react-app
+- (React) NPX
+#### Laravel
+- Laravel
+- Composer
+- PHP
 ## Installation:
 ### Windows:
 Clone the repository:
