@@ -100,7 +100,7 @@ Node.js project:
 ```
 node
 ```
-#### WIP. For lots of config options, [see the pyscaffold README.](https://github.com/pyscaffold/pyscaffold#configuration--packaging)
+#### For lots of config options, [see the pyscaffold README.](https://github.com/pyscaffold/pyscaffold#configuration--packaging)
 Python project:
 ```
 python
