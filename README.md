@@ -10,7 +10,6 @@ Contact us [on Discord.](https://discord.gg/eqWstJu)
 In addition:
 #### Node/React/Express
 - (React) create-react-app
-- (React) NPX
 #### Laravel
 - Laravel
 - Composer
