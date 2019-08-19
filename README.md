@@ -8,7 +8,7 @@ Contact us [on Discord.](https://discord.gg/eqWstJu)
 - Git
 - (Optional but recommended) A text editor (i.e. VS Code, Atom, etc.)
 In addition:
-#### NodeJS/React/ExpressJS
+#### Node.JS/React.JS/Express.JS
 - NPM
 #### Laravel
 - Laravel
