@@ -6,7 +6,7 @@ Contact us [on Discord.](https://discord.gg/eqWstJu)
 #### Universal
 - Python 3.4+
 - Git
-- A text editor i.e. VS Code, Atom, etc. Optional but recommended)
+- A text editor i.e. VS Code, Atom, etc. Optional but recommended.
 #### React/Node.js/Express.js
 - npm
 #### Laravel
