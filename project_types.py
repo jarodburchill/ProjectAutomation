@@ -58,11 +58,13 @@ def Express():
 def Laravel():
     subprocess.check_call("laravel new {}".format(projectName), shell=True)
     os.chdir(projectName)
+    subprocess.check_call("php artisan serve", shell=True)
 
 
 def Vue():
     subprocess.check_call("vue create {}".format(projectName), shell=True)
     os.chdir(projectName)
+    subprocess.check_call("npm run serve", shell=True)
 
 
 # project types dict with values for correct process function
