@@ -31,6 +31,7 @@ directory = config.get("DEFAULT", "directory")
 projectName = ""
 projectType = ""
 editor = config.get("DEFAULT", "editor")
+defproj = config.get("DEFAULT", "defaultproj")
 
 
 # global GitHub credentials
@@ -128,9 +129,11 @@ while os.path.isdir(directory + "\\" + projectName):
     projectName = input("Project name: ")
 
 
-# requests user for project type
-projectType = input("Project type: ")
-
+# decide project type
+if defproj is not "none":
+    projectType = defproj
+else:
+    projectType = input("Project type: ")
 
 # loops until project type is valid
 while projectType not in project_types.types:
