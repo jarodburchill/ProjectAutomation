@@ -129,6 +129,14 @@ The `private` option is blank by default. If it is set to `y` all repos will be 
 private = <y/n>
 ```
 
+---
+
+The `defaultproj` option is set to `none` by default. Set it to a project type, and all projects you create will be that type.
+
+```
+defaultproj = <project type/none>
+```
+
 ## Usage:
 
 ### Run in Terminal:
