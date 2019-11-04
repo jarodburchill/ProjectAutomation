@@ -73,30 +73,10 @@ All configuration options can be found in the `script.config` file.
 | Name         | Description           | Usage                | Default           | 
 | ------------- | --------------------- | -------------------- | ----------------- |
 | `directory` | Takes a file path string to determine where new projects will be created. | `directory = <path>` | `C:/Projects`. If on Windows, change if you like. If on Mac, you must set it to `/Users/<username>/desired path`. If on Linux, you must set it to `/home/<username>/desired path`. |
-| `editor` | Takes a string to determine which editor new projects will be opened in after creations. | `editor = <name of command that opens the editor/none>` (see EDITORS.md) | `code` (opens VSCode) |
-
-
-The `username` option is blank by default. If a correct GitHub username is entered into this option, the script will not prompt you to enter a username on each run.
-
-```
-username = <username>
-```
-
----
-
-The `password` option is blank by default. If a correct GitHub password is entered into this option and the username option has also been provided, the script will not prompt you to enter a password on each run.
-
-```
-password = <password>
-```
-
----
-
-The `private` option is blank by default. If it is set to `y` all repos will be made private by default. If it is set to `n` all repos will be set to public by default.
-
-```
-private = <y/n>
-```
+| `editor` | Takes a string to determine which editor new projects will be opened in after creation. | `editor = <name of command that opens the editor/none>` (see EDITORS.md) | `code` (opens VSCode) |
+| `username` | If a valid GitHub username is entered into this option, the script will not prompt for your usernane every run. | `username = <username>` | blank |
+| `password` | If the `username` option is set, the script will not prompt for your GitHub password every run. | `password = <password>` |
+| `private` | Takes a string to determine if projects should have a private or public GitHub repo. | `private = <y/n>` |
 
 ## Usage:
 
