@@ -75,8 +75,8 @@ All configuration options can be found in the `script.config` file.
 | `directory` | Takes a file path string to determine where new projects will be created. | `directory = <path>` | `C:/Projects`. If on Windows, change if you like. If on Mac, you must set it to `/Users/<username>/desired path`. If on Linux, you must set it to `/home/<username>/desired path`. |
 | `editor` | Takes a string to determine which editor new projects will be opened in after creation. | `editor = <name of command that opens the editor/none>` (see EDITORS.md) | `code` (opens VSCode) |
 | `username` | If a valid GitHub username is entered into this option, the script will not prompt for your usernane every run. | `username = <username>` | blank |
-| `password` | If the `username` option is set, the script will not prompt for your GitHub password every run. | `password = <password>` |
-| `private` | Takes a string to determine if projects should have a private or public GitHub repo. | `private = <y/n>` |
+| `password` | If the `username` option is set, the script will not prompt for your GitHub password every run. | `password = <password>` | blank |
+| `private` | Takes a string to determine if projects should have a private or public GitHub repo. | `private = <y/n>` | blank |
 
 ## Usage:
 
