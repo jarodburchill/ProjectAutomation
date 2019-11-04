@@ -70,42 +70,11 @@ chmod +x new-project
 All configuration options can be found in the `script.config` file.
 
 ### Options and Defaults:
+| Name         | Description           | Usage                | Default           | 
+| ------------- | --------------------- | -------------------- | ----------------- |
+| `directory` | Takes a file path string to determine where new projects will be created. | `directory = <path>` | `C:/Projects`. If on Windows, change if you like. If on Mac, you must set it to `/Users/<username>/desired path`. If on Linux, you must set it to `/home/<username>/desired path`. |
+| `editor` | Takes a string to determine which editor new projects will be opened in after creations. | `editor = <name of command that opens the editor/none>` (see EDITORS.md) | `code` (opens VSCode) |
 
-The `directory` option takes a file path string to determine where new local repositories will be created.
-
-Default path for Windows users, change as required:
-
-```
-directory = C:/Projects/
-```
-
-Linux users must change the local path:
-
-```
-directory = /home/$USER/Projects/
-```
-
-Mac users must change the local path:
-
-```
-directory = /Users/$USER/Projects/
-```
-
-#### \$USER = your machine's username. YOU MUST CHANGE THIS!
-
----
-
-The `editor` option takes a string to determine what editor new projects will be opened in after creation.
-
-```
-editor = <editor>
-```
-
-Any editor that is installed on your local machine is supported (provided it has a command line command to open). Set to `none` if you don't wish to open the repo in an editor.
-
-#### See EDITORS.md for a list of editors.
-
----
 
 The `username` option is blank by default. If a correct GitHub username is entered into this option, the script will not prompt you to enter a username on each run.
 
