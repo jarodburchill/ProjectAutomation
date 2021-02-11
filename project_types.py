@@ -79,8 +79,15 @@ def Laravel():
     os.chdir(projectName)
 
 
+# process for vue projects
 def Vue():
     subprocess.check_call("vue create {}".format(projectName), shell=True)
+    os.chdir(projectName)
+
+
+# process for electron projects
+def Electron():
+    subprocess.check_call("npx create-electron-app {}".format(projectName), shell=True)
     os.chdir(projectName)
 
 
@@ -94,5 +101,6 @@ types = {
     'python': Python,
     'express': Express,
     'laravel': Laravel,
-    'vue': Vue
+    'vue': Vue,
+    'electron': Electron
 }
