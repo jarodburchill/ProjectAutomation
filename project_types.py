@@ -87,7 +87,7 @@ def Vue():
 
 # process for electron projects
 def Electron():
-    subprocess.check_call("npx create-electron-app {}".format(projectName), shell=True
+    subprocess.check_call("npx create-electron-app {}".format(projectName), shell=True)
     os.chdir(projectName)
 
 

@@ -10,7 +10,7 @@ Contact us [on Discord.](https://discord.gg/eqWstJu)
 
 - [Python 3.4+](https://www.python.org/downloads/)
 - [Git](https://git-scm.com/downloads)
-- A text editor i.e. [VS Code](https://code.visualstudio.com/), [Atom](https://atom.io/), etc. (Optional but recommended.)
+- A text editor (eg. [VS Code](https://code.visualstudio.com/) or [Atom](https://atom.io/. Optional but recommended.)
 
 #### React/Electron/Node.js/Express.js
 
