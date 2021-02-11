@@ -4,7 +4,7 @@ Python script for creating new projects in the desired local directory, with a G
 
 Contact us [on Discord.](https://discord.gg/eqWstJu)
 
-## Requirements:
+## Requirements
 
 #### Universal
 
@@ -26,9 +26,9 @@ Contact us [on Discord.](https://discord.gg/eqWstJu)
 - [Composer](https://getcomposer.org/)
 - [Laravel](https://laravel.com/docs/5.8/installation)
 
-## Installation:
+## Installation
 
-### Windows:
+### Windows
 
 Clone the repository:
 
@@ -43,7 +43,7 @@ Set the environment variable:
 setx path "%path%;C:\project-automation\windows"
 ```
 
-### Mac/Linux:
+### Mac/Linux
 
 Clone the repository:
 
@@ -65,6 +65,26 @@ cd ~/project-automation/mac-linux
 chmod +x new-project
 ```
 
+## Usage
+
+### Run in Terminal
+
+```
+new-project
+```
+
+Alternatively:
+
+```
+python automate_project.py
+```
+
+### About authentication
+
+Due to GitHub API changes, you can no longer authenticate from the command line using your password. You'll need to use a **public access token** (PAT).
+
+To create one, [follow the steps here](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token). You'll only need the **repo** scope. (This also works if you have TFA enabled!)
+
 ## Configuration:
 
 All configuration options can be found in the `script.config` file.
@@ -78,15 +98,7 @@ All configuration options can be found in the `script.config` file.
 | `password` | If the `username` option is set, the script will not prompt for your GitHub password every run. | `password = <password>` | blank |
 | `private` | Takes a string to determine if projects should have a private or public GitHub repo. | `private = <y/n>` | blank |
 
-## Usage:
-
-### Run in Terminal:
-
-```
-new-project
-```
-
-### Project Types:
+### Project Types
 
 | Type          | Description           |
 | ------------- | --------------------- |
@@ -103,7 +115,7 @@ new-project
 
 #### For lots of python config options, [see the pyscaffold README.](https://github.com/pyscaffold/pyscaffold#configuration--packaging)
 
-## Contributors:
+## Contributors
 
 <a href="https://github.com/jarodburchill"><img src="https://avatars.githubusercontent.com/u/37840393?v=3" title="jarodburchill" width="80" height="80"></a>
 <a href="https://github.com/ajnieset"><img src="https://avatars.githubusercontent.com/u/40476295?v=3" title="ajnieset" width="80" height="80"></a>

@@ -162,7 +162,7 @@ try:
     subprocess.call("git push -u origin master", shell=True)
 
     # opens project in editor
-    if editor is not "none":
+    if editor != "none":
         try:
             subprocess.call("{} .".format(editor), shell=True)
         except Exception as e:
